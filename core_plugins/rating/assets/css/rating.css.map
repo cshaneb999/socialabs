@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAiCA,OAAQ,CACJ,MAAM,CAAC,OAAO,CACd,KAAK,CAAC,OAAO",
+"sources": ["../sass/rating.scss"],
+"names": [],
+"file": "rating.css"
+}

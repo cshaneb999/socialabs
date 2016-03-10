@@ -1,0 +1,14 @@
+.avatar_gallery,
+.filepicker {
+    margin:4px;
+    float:left;
+}
+.filepicker {
+    border:4px solid #ffffff;
+    cursor:pointer;
+    width:75px;
+    height:auto;
+}
+.filepicker.active {
+    border-color:#18BC9C;
+}

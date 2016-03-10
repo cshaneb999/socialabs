@@ -1,0 +1,7 @@
+{
+    "name": "friends",
+    "label": "Friends (Core)",
+    "requires": [
+        "profile"
+    ]
+}

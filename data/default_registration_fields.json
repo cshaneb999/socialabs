@@ -1,0 +1,32 @@
+[
+    {
+        "name": "first_name",
+        "label": "First Name",
+        "field_type": "text",
+        "weight": 100
+    },
+    {
+        "name": "last_name",
+        "label": "Last Name",
+        "field_type": "text",
+        "weight": 200
+    },
+    {
+        "name": "email",
+        "label": "Email",
+        "field_type": "email",
+        "weight": 300
+    },
+    {
+        "name": "password",
+        "label": "Password",
+        "field_type": "password",
+        "weight": 400
+    },
+    {
+        "name": "password2",
+        "label": "Password (Again)",
+        "field_type": "password",
+        "weight": 500
+    }
+]

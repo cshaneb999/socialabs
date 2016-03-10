@@ -1,0 +1,18 @@
+.pull-left + .media-body, .pull-right + .media-body {
+    display: block;
+    overflow: hidden;
+    zoom: 1;
+}
+.panel > .list-group .list-group-item.message_list_element {
+    border-left:8px solid #ffffff;
+}
+.panel > .list-group .list-group-item.message_list_element.selected {
+    border-left:8px solid #5BC8AC;
+}
+.panel > .list-group .list-group-item.message_list_element:hover {
+    border-left:8px solid #F4F4F4;
+}
+
+.panel > .list-group .list-group-item.message_list_element.selected:hover {
+    border-left:8px solid #5BC8AC;
+}

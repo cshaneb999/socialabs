@@ -1,0 +1,33 @@
+.login_form,
+.register_form,
+.inbox_form,
+.general_settings_form{
+    margin-bottom:20px;
+}
+.form-control{
+    border-color: #F0F0F0; 
+    border-width:2px;
+    outline: 0px none;
+    box-shadow: none;
+    border-radius:0px;
+    input {
+        border-radius:0px;
+        border-color:#F0F0F0;
+    }
+}
+.form-control:focus {
+    border-color:#8C8C8C;
+    border-width:2px;
+    outline: 0px none;
+    box-shadow: none;
+    border-radius:0px;
+    input {
+        border-radius:0px;
+        border-color: #8C8C8C;
+    }
+}
+.register_form,
+.login_form{
+    max-width:360px; 
+    margin:0px auto;
+}

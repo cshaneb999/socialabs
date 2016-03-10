@@ -1,0 +1,7 @@
+{
+    "name": "forum",
+    "label": "Forum (Core)",
+    "requires": [
+        "files"
+    ]
+}

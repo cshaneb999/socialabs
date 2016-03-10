@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAK,CACD,MAAM,CAAC,QAAQ",
+"sources": ["../sass/tinymce_content.scss"],
+"names": [],
+"file": "tinymce_content.css"
+}

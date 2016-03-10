@@ -1,0 +1,27 @@
+{
+    "name": "SociaLabs/SociaLabs",
+    "description": "SociaLabs Web Framework.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shane Barron",
+            "email": "admin@socialabs.co"
+        },
+        {
+            "name": "Aaustin Barron",
+            "email": "aaustin@socialabs.co"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "*",
+        "ircmaxell/password-compat": "dev-master",
+        "grom/tube-link": "dev-master",
+        "phpmd/phpmd": "@stable",
+        "php-ffmpeg/php-ffmpeg": "~0.5",
+        "php-ffmpeg/extras": "*",
+        "phpfastcache/phpfastcache": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.1.*"
+    }
+}

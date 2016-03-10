@@ -1,0 +1,7 @@
+{
+    "name": "members",
+    "label": "Members (Core)",
+    "requires": [
+        "profile"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "name": "videos",
+    "label": "Videos (Core)",
+    "requires": [
+        "files"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAoCI,mCAAa,CACT,MAAM,CAAC,eAAe,CACtB,MAAM,CAAC,OAAO,CACd,0CAAS,CACL,YAAY,CAAC,KAAK,CAClB,aAAa,CAAC,GAAG,CAK7B,eAAgB,CACZ,KAAK,CAAC,KAAK,CAEf,QAAS,CACL,MAAM,CAAC,OAAO",
+"sources": ["../sass/userpicker.scss"],
+"names": [],
+"file": "userpicker.css"
+}

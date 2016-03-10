@@ -1,0 +1,23 @@
+{
+    "name": "grom/tube-link",
+    "description": "Extract video/music information from any URL and render HTML",
+    "keywords": ["video", "youtube", "url", "parser", "spotify", "vimeo", "dailymotion"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jérôme Tamarelle",
+            "email": "jerome@tamarelle.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "TubeLink": "src/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1-dev"
+        }
+    }
+}

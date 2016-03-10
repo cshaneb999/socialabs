@@ -1,0 +1,111 @@
+/**
+ * PHP version 5
+ *
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2015 SociaLabs
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ *
+ * @author     Shane Barron <admin@socialabs.co>
+ * @author     Aaustin Barron <aaustin@socialabs.co>
+ * @copyright  2015 SociaLabs
+ * @license    http://opensource.org/licenses/MIT MIT
+ * @version    1
+ * @link       http://socialabs.co
+ */
+
+.detailBox {
+    width:100%;
+    margin-bottom: 20px;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    border-radius:4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+}
+.titleBox {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #333;
+    background-color: #F5F5F5;
+    border-color: #DDD;
+}
+
+.commentBox {
+    padding:10px;
+    border-top:1px dotted #bbb;
+}
+.actionBox .form-group * {
+    width:100%;
+}
+.taskDescription {
+    margin-top:10px;
+}
+.commentList {
+    padding:0;
+    list-style:none;
+    overflow:auto;
+    margin-bottom:8px;
+    margin-top:8px;
+}
+.commentList li {
+    margin:0;
+    margin-top:4px;
+    padding:4px;
+    background:#FAFAFA;
+}
+.commentList li.flash {
+    background:#E9E6D9;
+}
+.commentList li > div {
+    display:table-cell;
+}
+.commenterImage {
+    width:30px;
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+.commenterImage img {
+    width:100%;
+    border-radius:50%;
+}
+.commentText p {
+    margin:0;
+    font-size:12px;
+}
+.timeago {
+    color:#aaa;
+    font-family:verdana;
+    font-size:11px;
+}
+.actionBox {
+    padding:10px;
+}
+.inline_comment_form {
+    display:none;
+    margin-top:8px;
+    margin-bottom:8px;
+}
+.more_comments {
+    margin-top:14px;
+}

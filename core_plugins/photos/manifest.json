@@ -1,0 +1,7 @@
+{
+    "name": "photos",
+    "label": "Photos (Core)",
+    "requires": [
+        "files"
+    ]
+}

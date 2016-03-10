@@ -1,0 +1,38 @@
+source:
+    - classes
+    - engine/shortcuts.php
+
+destination: docs/
+
+accessLevels:           
+    - public
+    - static
+
+# Base url used for sitemap (useful for public doc).
+baseUrl: http://www.socialabs.co/docs
+
+# Add link to ZIP archive of documentation.
+extensions:
+    - php     
+
+exclude:
+    - plugins/
+    - assets/
+    - core_plugins/
+    - docs/
+    - engine/
+    - languages/
+    - views/
+
+charset:
+    - utf-8              
+
+php: no             
+
+templateTheme: bootstrap
+
+title: SociaLabs Framework API
+
+tree: true     
+
+groups: none

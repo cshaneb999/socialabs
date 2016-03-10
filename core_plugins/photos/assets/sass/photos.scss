@@ -1,0 +1,12 @@
+.add_album_form {
+    margin-bottom:20px;
+}
+.photopicker_album_gallery_item {
+    &.active {
+        background:green;
+    }
+    cursor:pointer;
+}
+.photopicker_gallery_item {
+    cursor:pointer;
+}

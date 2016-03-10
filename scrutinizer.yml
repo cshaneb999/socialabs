@@ -1,0 +1,3 @@
+filter:
+    excluded_paths:
+        - "vendor/"               # Everyhing in a root level "tests" directory

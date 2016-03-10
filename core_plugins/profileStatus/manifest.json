@@ -1,0 +1,7 @@
+{
+    "name": "profileStatus",
+    "label": "Profile Status (Core)",
+    "requires": [
+        "profile"
+    ]
+}

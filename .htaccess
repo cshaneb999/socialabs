@@ -1,0 +1,67 @@
+<FilesMatch "(nginx|htaccess).dist">
+	order allow,deny
+	deny from all
+</FilesMatch>
+
+Options -Indexes
+
+Options +FollowSymLinks
+
+DirectoryIndex index.php
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 0 seconds"
+  ExpiresByType audio/ogg "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType video/mp4 "access plus 1 month"
+  ExpiresByType video/ogg "access plus 1 month"
+  ExpiresByType video/webm "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+</IfModule>
+
+<FilesMatch "\.(jpg|jpeg|gif|png|mp3|flv|mov|avi|3pg|html|htm|swf|js|css|ico)$">
+	FileETag MTime Size
+</FilesMatch>
+
+<IfModule mod_gzip.c>
+	mod_gzip_on yes
+	mod_gzip_dechunk yes
+	mod_gzip_keep_workfiles No
+	mod_gzip_minimum_file_size 1000
+	mod_gzip_maximum_file_size 1000000
+	mod_gzip_maximum_inmem_size 1000000
+	mod_gzip_item_include mime ^text/.*
+	mod_gzip_item_include mime ^application/javascript$
+	mod_gzip_item_include mime ^application/x-javascript$
+	# Exclude old browsers and images since IE has trouble with this
+	mod_gzip_item_exclude reqheader "User-Agent: .*Mozilla/4\..*\["
+	mod_gzip_item_exclude mime ^image/.*
+</IfModule>
+
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript image/svg+xml
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch ^Mozilla/4\.[0678] no-gzip
+	BrowserMatch \bMSIE !no-gzip
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header append Vary User-Agent env=!dont-vary
+</IfModule>
+
+SetEnvIfNoCase Request_URI action\/* no-gzip dont-vary
+SetEnvIfNoCase Request_URI actions\/* no-gzip dont-vary
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{HTTP_USER_AGENT} Wget.*
+    RewriteRule .* - [F,L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+</IfModule>

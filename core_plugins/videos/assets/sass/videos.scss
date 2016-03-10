@@ -1,0 +1,13 @@
+.add_album_form {
+    margin-bottom:20px;
+}
+.videopicker_album_gallery_item {
+    &.active {
+        background:green;
+    }
+    cursor:pointer;
+    margin:4px;
+}
+.videopicker_gallery_item {
+    cursor:pointer;
+}

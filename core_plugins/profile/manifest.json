@@ -1,0 +1,7 @@
+{
+    "name": "profile",
+    "label": "Profile (Core)",
+    "requires": [
+        "files"
+    ]
+}
