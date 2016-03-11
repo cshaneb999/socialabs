@@ -49,11 +49,11 @@ class LoginActionHandler {
         runHook("action:login:before");
         $email = getInput("email");
         $access = getIgnoreAccess();
-        $referrer = getInput("referrer");
+        $referer = getInput("referer");
         $user = getEntity(
                 array(
-                    "type" => "User",
-                    "metadata_name" => "email",
+                    "type"           => "User",
+                    "metadata_name"  => "email",
                     "metadata_value" => $email
                 )
         );
@@ -65,8 +65,8 @@ class LoginActionHandler {
                 runHook("action:login:after", array(
                     "user" => $user
                 ));
-                if (getInput("referrer")) {
-                    forward($referrer);
+                if ($referer) {
+                    forward($referer);
                 }
             }
         } else {

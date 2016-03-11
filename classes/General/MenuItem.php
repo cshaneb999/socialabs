@@ -23,17 +23,17 @@ class MenuItem {
         }
         global $menus;
         $defaults = array(
-            "name" => NULL,
-            "label" => NULL,
-            "page" => NULL,
-            "menu" => "header_left",
-            "weight" => 500,
-            "link_class" => NULL,
+            "name"         => NULL,
+            "label"        => NULL,
+            "page"         => NULL,
+            "menu"         => "header_left",
+            "weight"       => 500,
+            "link_class"   => NULL,
             "button_class" => NULL,
-            "external" => NULL,
-            "action" => false,
-            "confirm" => false,
-            "list_class" => NULL
+            "external"     => NULL,
+            "action"       => false,
+            "confirm"      => false,
+            "list_class"   => NULL
         );
         $params = array_merge($defaults, $params);
         if ($params['name'] && !$params['page']) {
@@ -106,10 +106,13 @@ class MenuItem {
                 }
                 foreach ($menuarray as $menuitemname => $menu) {
                     $list_class = isset($menu->list_class) ? $menu->list_class : "";
+                    $label = display("output/editor", array(
+                        "value" => $menu->label
+                    ));
                     if (isset($menu->page) && ($menu->page == "#") || (!isset($menu->page))) {
                         $submenu = getMenuItems($menuitemname);
                         $return .= "<$child class='dropdown $item_class $list_class'>";
-                        $return .= "<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>" . $menu->label . "</a>";
+                        $return .= "<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>" . $label . "</a>";
                         $return .= "<$parent class='dropdown-menu' role='menu'>";
                         $return .= $submenu;
                         $return .= "</$parent>";
@@ -125,7 +128,6 @@ class MenuItem {
                         } else {
                             $link = $menu->page;
                         }
-                        $label = $menu->label;
                         $active_class = (($menuitemname == currentPage()) || ($menu->page == currentPage())) ? "active" : NULL;
                         if ($child_wrapper) {
                             $return .= "<$child class='$active_class $item_class $list_class'>";

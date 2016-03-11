@@ -54,7 +54,7 @@ class Setting extends Entity {
         if ($name) {
             $this->type = "Setting";
             $params = array(
-                "metadata_name" => "name",
+                "metadata_name"  => "name",
                 "metadata_value" => $name
             );
             if (!$this->exists($params)) {
@@ -78,8 +78,8 @@ class Setting extends Entity {
      */
     static function set($name, $value) {
         $setting = getEntity(array(
-            "type" => "Setting",
-            "metadata_name" => "name",
+            "type"           => "Setting",
+            "metadata_name"  => "name",
             "metadata_value" => $name
         ));
         if ($setting) {
@@ -99,14 +99,18 @@ class Setting extends Entity {
      */
     static function get($name) {
         $system_setting = getEntity(array(
-            "type" => "Setting",
-            "metadata_name" => "name",
+            "type"           => "Setting",
+            "metadata_name"  => "name",
             "metadata_value" => $name
         ));
-        if ($system_setting) {
+        if (!empty($system_setting->value)) {
             return $system_setting->value;
         }
-        return false;
+        if (isset($system_setting->default)) {
+            return $system_setting->default;
+        } else {
+            return;
+        }
     }
 
     /**
@@ -117,8 +121,8 @@ class Setting extends Entity {
     static function getAll($tab = "general") {
         $return = array();
         $settings = getEntities(array(
-            "type" => "Setting",
-            "metadata_name" => "tab",
+            "type"           => "Setting",
+            "metadata_name"  => "tab",
             "metadata_value" => $tab
         ));
         return $settings;

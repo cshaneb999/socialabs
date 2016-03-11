@@ -40,9 +40,9 @@
 namespace SociaLabs;
 
 reverseGatekeeper();
-$referrer = getInput("referrer", true);
-if ($referrer) {
-    $register = getSiteURL() . "register?referrer=" . $referrer;
+$referer = getInput("referer", true);
+if ($referer) {
+    $register = getSiteURL() . "register?referer=" . $referer;
 } else {
     $register = getSiteURL() . "register";
 }

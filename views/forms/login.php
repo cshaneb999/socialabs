@@ -40,25 +40,28 @@
 namespace SociaLabs;
 
 echo "<div class='clearfix'>";
-$referrer = getInput("referrer", false);
-if ($referrer) {
+$referer = NULL;
+if (isset($_GET['referer'])) {
+    $referer = $_GET['referer'];
+}
+if ($referer) {
     echo display("input/hidden", array(
-        "name" => "referrer",
-        "value" => $referrer
+        "name"  => "referer",
+        "value" => $referer
     ));
 }
 echo display("input/email", array(
-    "name" => "email",
-    "label" => NULL,
-    "class" => "form-control input-lg",
+    "name"        => "email",
+    "label"       => NULL,
+    "class"       => "form-control input-lg",
     "placeholder" => translate("login:form:label:email"),
-    "value" => NULL
+    "value"       => NULL
 ));
 echo display("input/password", array(
-    "name" => "password",
-    "label" => NULL,
-    "value" => NULL,
-    "class" => "form-control input-lg",
+    "name"        => "password",
+    "label"       => NULL,
+    "value"       => NULL,
+    "class"       => "form-control input-lg",
     "placeholder" => translate("login:form:label:password")
 ));
 echo display("page_elements/login_extension");
@@ -68,6 +71,6 @@ echo display("input/submit", array(
     "class" => "btn btn-success pull-right"
 ));
 echo "<div class='form-group' style='margin-top:10px;'>";
-echo "<a href='" . getSiteURL(). "ForgotPassword' class='text-center' style='line-height:34px;'>Forgot Your Password?</a>";
+echo "<a href='" . getSiteURL() . "ForgotPassword' class='text-center' style='line-height:34px;'>Forgot Your Password?</a>";
 echo "</div>";
 echo "</div>";

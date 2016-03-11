@@ -82,18 +82,18 @@ class Page {
         if (is_array($header)) {
             $params = $header;
             $defaults = array(
-                "header" => NULL,
-                "button" => NULL,
+                "header"        => NULL,
+                "button"        => NULL,
                 "wrapper_class" => NULL,
-                "breadcrumbs" => NULL,
-                "footer" => NULL
+                "breadcrumbs"   => NULL,
+                "footer"        => NULL
             );
 
             $params = array_merge($defaults, $params);
         } else {
             $params = array(
                 "header" => $header,
-                "body" => $body,
+                "body"   => $body,
                 "button" => $button
             );
         }
@@ -167,6 +167,9 @@ class Page {
         if (!isset($variables['value'])) {
             $variables['value'] = NULL;
         }
+        if (!isset($variables['container'])) {
+            $variables['container'] = true;
+        }
         $return = NULL;
         if (Setting::get("wrap_views") == "yes") {
             $return = "<!-- $path -->";
@@ -179,7 +182,7 @@ class Page {
         $plugins = Plugin::getEnabledPlugins(true);
         $static_vars = Cache::get("vars", "session");
         $return = runHook("view:before", array(
-            "view" => $path,
+            "view"   => $path,
             "return" => $return
         ));
         new Cache("vars", $static_vars, "session");

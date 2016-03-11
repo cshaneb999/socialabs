@@ -96,8 +96,8 @@ class Init {
         );
         foreach ($intervals as $interval) {
             $entity = getEntity(array(
-                "type" => "Cron",
-                "metadata_name" => "interval",
+                "type"           => "Cron",
+                "metadata_name"  => "interval",
                 "metadata_value" => $interval
             ));
             if (!$entity) {
@@ -214,10 +214,10 @@ class Init {
 
         if (isEnabledPlugin("members") || isEnabledPlugin("groups")) {
             $params = array(
-                "name" => "directory",
-                "label" => "<i class='icon ion-information-circled'></i><p>Directory</p>",
-                "page" => "#",
-                "menu" => "header_left",
+                "name"   => "directory",
+                "label"  => "<i class='icon ion-information-circled'></i><p>Directory</p>",
+                "page"   => "#",
+                "menu"   => "header_left",
                 "weight" => 1
             );
 
@@ -225,29 +225,29 @@ class Init {
         }
         if (!loggedIn()) {
             $params = array(
-                "name" => "login",
-                "label" => "Login",
-                "page" => "login",
-                "menu" => "my_account_right",
+                "name"   => "login",
+                "label"  => "Login",
+                "page"   => "login",
+                "menu"   => "my_account_right",
                 "weight" => 10
             );
             new MenuItem($params);
 
             $params = array(
-                "name" => "register",
-                "label" => "Register",
-                "page" => "register",
-                "menu" => "my_account_right",
+                "name"   => "register",
+                "label"  => "Register",
+                "page"   => "register",
+                "menu"   => "my_account_right",
                 "weight" => 10
             );
             new MenuItem($params);
         } else {
 
             $params = array(
-                "name" => "my_account",
-                "label" => "My Account",
-                "page" => "#",
-                "menu" => "header_right",
+                "name"       => "my_account",
+                "label"      => "My Account",
+                "page"       => "#",
+                "menu"       => "header_right",
                 "list_class" => "visible-xs visible-sm"
             );
 
@@ -255,10 +255,10 @@ class Init {
 
 
             $params = array(
-                "name" => "dashboard",
-                "label" => "Dashboard",
-                "page" => "home",
-                "menu" => "my_account",
+                "name"   => "dashboard",
+                "label"  => "Dashboard",
+                "page"   => "home",
+                "menu"   => "my_account",
                 "weight" => 0
             );
 
@@ -270,38 +270,38 @@ class Init {
             }
 
             $params = array(
-                "name" => "notifications",
-                "label" => "Notifications <span class='badge'>$notifications</span>",
-                "page" => "notifications",
-                "menu" => "my_account",
+                "name"   => "notifications",
+                "label"  => "Notifications <span class='badge'>$notifications</span>",
+                "page"   => "notifications",
+                "menu"   => "my_account",
                 "weight" => 10
             );
             new MenuItem($params);
 
             $params = array(
-                "name" => "logout",
-                "label" => "Logout",
-                "page" => "action/logout",
-                "menu" => "my_account_right",
+                "name"   => "logout",
+                "label"  => "Logout",
+                "page"   => "action/logout",
+                "menu"   => "my_account_right",
                 "weight" => 9000
             );
             new MenuItem($params);
 
             $params = array(
-                "name" => "my_settings",
-                "label" => "My Settings",
-                "page" => "mySettings",
-                "menu" => "my_account_right",
+                "name"   => "my_settings",
+                "label"  => "My Settings",
+                "page"   => "mySettings",
+                "menu"   => "my_account_right",
                 "weight" => 100
             );
             new MenuItem($params);
 
             if (adminLoggedIn()) {
                 $params = array(
-                    "name" => "admin",
+                    "name"  => "admin",
                     "label" => "<i class='icon ion-gear-b'></i><p>Admin</p>",
-                    "page" => "admin",
-                    "menu" => "header_right"
+                    "page"  => "admin",
+                    "menu"  => "header_right"
                 );
                 new MenuItem($params);
             }
@@ -339,6 +339,7 @@ class Init {
         new StorageType("Plugin", "requires", "text");
         new StorageType("Setting", "options", "text");
         new StorageType("Setting", "value", "text");
+        new StorageType("Setting", "default", "text");
         new StorageType("Notification", "link", "text");
         new StorageType("Notification", "message", "text");
         new StorageType("Activity", "message", "text");
@@ -387,39 +388,39 @@ class Init {
         new Setting("site_name", "text", "", "general", SITENAME);
         new Setting("site_email", "email", "", "general", SITEEMAIL);
         new Setting("base_theme", "dropdown", array(
-            "default" => "Default",
-            "cerulean" => "Cerulean",
-            "cosmo" => "Cosmo",
-            "cyborg" => "Cyborg",
-            "darkly" => "Darkly",
-            "flatly" => "Flatly",
-            "journal" => "Journal",
-            "lumen" => "Lumen",
-            "paper" => "Paper",
-            "readable" => "Readable",
+            "default"   => "Default",
+            "cerulean"  => "Cerulean",
+            "cosmo"     => "Cosmo",
+            "cyborg"    => "Cyborg",
+            "darkly"    => "Darkly",
+            "flatly"    => "Flatly",
+            "journal"   => "Journal",
+            "lumen"     => "Lumen",
+            "paper"     => "Paper",
+            "readable"  => "Readable",
             "sandstone" => "Sandstone",
-            "simplex" => "Simplex",
-            "slate" => "Slate",
-            "spacelab" => "Spacelab",
+            "simplex"   => "Simplex",
+            "slate"     => "Slate",
+            "spacelab"  => "Spacelab",
             "superhero" => "Superhero",
-            "united" => "United",
-            "yeti" => "Yeti"
+            "united"    => "United",
+            "yeti"      => "Yeti"
         ));
         new Setting("default_access", "dropdown", Access::accessHandlerDropdown());
         new Setting("debug_mode", "dropdown", array(
-            "no" => "No",
+            "no"  => "No",
             "yes" => "Yes"
         ));
         new Setting("wrap_views", "dropdown", array(
-            "no" => "No",
+            "no"  => "No",
             "yes" => "Yes"
         ));
         new Setting("show_translations", "dropdown", array(
-            "no" => "No",
+            "no"  => "No",
             "yes" => "Yes"
         ));
         new Setting("hide_socia_link", "dropdown", array(
-            "no" => "No",
+            "no"  => "No",
             "yes" => "Yes"
         ));
     }
@@ -502,132 +503,132 @@ class Init {
      */
     static function loadDefaultMetatags() {
         $metatags = array(
-            "activity" => array(
-                "title" => getSiteName() . " | Activity Stream",
+            "activity"               => array(
+                "title"       => getSiteName() . " | Activity Stream",
                 "description" => ""
             ),
-            "addcircle" => array(
-                "title" => getSiteName() . " | Add a Circle",
+            "addcircle"              => array(
+                "title"       => getSiteName() . " | Add a Circle",
                 "description" => ""
             ),
-            "admin" => array(
-                "title" => getSiteName() . " | Admin",
+            "admin"                  => array(
+                "title"       => getSiteName() . " | Admin",
                 "description" => ""
             ),
-            "blogs" => array(
-                "title" => getSiteName() . " | Blogs",
+            "blogs"                  => array(
+                "title"       => getSiteName() . " | Blogs",
                 "description" => ""
             ),
-            "createcustompage" => array(
-                "title" => getSiteName() . " | Create Custom Page",
+            "createcustompage"       => array(
+                "title"       => getSiteName() . " | Create Custom Page",
                 "description" => ""
             ),
-            "editavatar" => array(
-                "title" => getSiteName() . " | Edit Your Avatar",
+            "editavatar"             => array(
+                "title"       => getSiteName() . " | Edit Your Avatar",
                 "description" => ""
             ),
-            "editcustompage" => array(
-                "title" => getSiteName() . " | Edit Custom Page",
+            "editcustompage"         => array(
+                "title"       => getSiteName() . " | Edit Custom Page",
                 "description" => ""
             ),
-            "editprofile" => array(
-                "title" => getSiteName() . " | Edit Your Profile",
+            "editprofile"            => array(
+                "title"       => getSiteName() . " | Edit Your Profile",
                 "description" => ""
             ),
-            "emailsent" => array(
-                "title" => getSiteName() . " | Email Sent",
+            "emailsent"              => array(
+                "title"       => getSiteName() . " | Email Sent",
                 "description" => ""
             ),
-            "files" => array(
-                "title" => getSiteName() . " | Files",
+            "files"                  => array(
+                "title"       => getSiteName() . " | Files",
                 "description" => ""
             ),
-            "file" => array(
-                "title" => getSiteName() . " | File",
+            "file"                   => array(
+                "title"       => getSiteName() . " | File",
                 "description" => ""
             ),
-            "followers" => array(
-                "title" => getSiteName() . " | Your Followers",
+            "followers"              => array(
+                "title"       => getSiteName() . " | Your Followers",
                 "description" => ""
             ),
-            "forgotpassword" => array(
-                "title" => getSiteName() . " | Forgot Password",
+            "forgotpassword"         => array(
+                "title"       => getSiteName() . " | Forgot Password",
                 "description" => ""
             ),
-            "forum" => array(
-                "title" => getSiteName() . " | Forum",
+            "forum"                  => array(
+                "title"       => getSiteName() . " | Forum",
                 "description" => ""
             ),
-            "friends" => array(
-                "title" => getSiteName() . " | " . translate("your_friends"),
+            "friends"                => array(
+                "title"       => getSiteName() . " | " . translate("your_friends"),
                 "description" => ""
             ),
-            "friendrequests" => array(
-                "title" => getSiteName() . " | Friend Requests",
+            "friendrequests"         => array(
+                "title"       => getSiteName() . " | Friend Requests",
                 "description" => ""
             ),
-            "groups" => array(
-                "title" => getSiteName() . " | Groups",
+            "groups"                 => array(
+                "title"       => getSiteName() . " | Groups",
                 "description" => ""
             ),
-            "home" => array(
-                "title" => getSiteName() . " | Home",
+            "home"                   => array(
+                "title"       => getSiteName() . " | Home",
                 "description" => ""
             ),
-            "inbox" => array(
-                "title" => getSiteName() . " | Your Inbox",
+            "inbox"                  => array(
+                "title"       => getSiteName() . " | Your Inbox",
                 "description" => ""
             ),
-            "insertFile" => array(
-                "title" => getSiteName() . " | Insert File",
+            "insertFile"             => array(
+                "title"       => getSiteName() . " | Insert File",
                 "description" => ""
             ),
-            "login" => array(
-                "title" => getSiteName() . " | Login",
+            "login"                  => array(
+                "title"       => getSiteName() . " | Login",
                 "description" => ""
             ),
-            "members" => array(
-                "title" => getSiteName() . " | Site Members",
+            "members"                => array(
+                "title"       => getSiteName() . " | Site Members",
                 "description" => ""
             ),
-            "mySettings" => array(
-                "title" => getSiteName() . " | My Settings",
+            "mySettings"             => array(
+                "title"       => getSiteName() . " | My Settings",
                 "description" => ""
             ),
-            "notifications" => array(
-                "title" => getSiteName() . " | Notifications",
+            "notifications"          => array(
+                "title"       => getSiteName() . " | Notifications",
                 "description" => ""
             ),
-            "pages" => array(
-                "title" => getSiteName() . " | Pages",
+            "pages"                  => array(
+                "title"       => getSiteName() . " | Pages",
                 "description" => ""
             ),
             "passwordresetemailsent" => array(
-                "title" => getSiteName() . " | Password Reset Email Sent",
+                "title"       => getSiteName() . " | Password Reset Email Sent",
                 "description" => ""
             ),
-            "photos" => array(
-                "title" => getSiteName() . " | Photos",
+            "photos"                 => array(
+                "title"       => getSiteName() . " | Photos",
                 "description" => ""
             ),
-            "profile" => array(
-                "title" => getSiteName() . " | Profile",
+            "profile"                => array(
+                "title"       => getSiteName() . " | Profile",
                 "description" => ""
             ),
-            "register" => array(
-                "title" => getSiteName() . " | Register",
+            "register"               => array(
+                "title"       => getSiteName() . " | Register",
                 "description" => ""
             ),
-            "searchFriends" => array(
-                "title" => getSiteName() . " | Search " . translate("friends"),
+            "searchFriends"          => array(
+                "title"       => getSiteName() . " | Search " . translate("friends"),
                 "description" => ""
             ),
-            "terms" => array(
-                "title" => getSiteName() . " | Terms",
+            "terms"                  => array(
+                "title"       => getSiteName() . " | Terms",
                 "description" => ""
             ),
-            "videos" => array(
-                "title" => getSiteName() . " | Videos",
+            "videos"                 => array(
+                "title"       => getSiteName() . " | Videos",
                 "description" => ""
             ),
         );
