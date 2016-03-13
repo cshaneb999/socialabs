@@ -67,4 +67,10 @@ class SessionCache {
         }
     }
 
+    static function delete($key) {
+        if (isset($_SESSION[SITESECRET][$key])) {
+            unset($_SESSION[SITESECRET][$key]);
+        }
+    }
+
 }
